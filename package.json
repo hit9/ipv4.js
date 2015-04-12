@@ -1,0 +1,17 @@
+{
+    "name": "ipv4.js",
+    "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/hit9/ipv4.js"
+
+    },
+    "dependencies": {
+        "create-error.js": "~0.0.2"
+    },
+    "description": "IPv4 utils for nodejs/iojs.",
+    "author": "hit9 <hit9@icloud.com>",
+    "keywords": ["ipv4"],
+    "license": "MIT"
+
+}
