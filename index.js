@@ -58,11 +58,17 @@ function or(addra, addrb) {
   return ntoa(aton(addra) | aton(addrb));
 }
 
+// next ip address
+function next(addr, incr) {
+  return ntoa(aton(addr) + incr || 1);
+}
+
 // exports
 exports.aton              = aton;
 exports.ntoa              = ntoa;
 exports.not               = not;
 exports.or                = or;
+exports.next              = next;
 exports.AddressError      = AddressError;
 exports.AddressTypeError  = AddressTypeError;
 exports.AddressValueError = AddressValueError;
