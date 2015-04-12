@@ -60,7 +60,7 @@ function or(addra, addrb) {
 
 // next ip address
 function next(addr, incr) {
-  return ntoa(aton(addr) + incr || 1);
+  return ntoa(aton(addr) + (incr || 1));
 }
 
 // exports
