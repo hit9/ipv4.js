@@ -1,6 +1,8 @@
 IPv4.js
 -------
 
+IPv4 utils for nodejs/iojs.
+
 ```
 npm install ipv4.js
 ```
