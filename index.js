@@ -59,6 +59,7 @@ function or(addra, addrb) {
   return ntoa(aton(addra) | aton(addrb));
 }
 
+// '0.255.255.255', '192.255.255.255' => '192.0.0.0'
 function xor(addra, addrb) {
   return ntoa(aton(addra) ^ aton(addrb));
 }
@@ -73,6 +74,7 @@ function prev(addr, decr) {
   return ntoa(aton(addr) - (decr || 1));
 }
 
+// build network
 function network(_net) {
   var list = _net.split('/')
 
@@ -97,8 +99,6 @@ function network(_net) {
   net.size = aton(net.last) - aton(net.first) + 1;
   return net;
 }
-
-// build
 
 // exports
 exports.aton           = aton;
