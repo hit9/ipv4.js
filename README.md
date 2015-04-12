@@ -7,6 +7,8 @@ IPv4 utils for nodejs/iojs.
 npm install ipv4.js
 ```
 
+![](https://travis-ci.org/hit9/ipv4.js.svg)
+
 Examples
 --------
 
