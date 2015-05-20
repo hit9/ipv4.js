@@ -14,6 +14,9 @@ function aton(addr) {
   if (typeof addr !== 'string')
     throw new IPv4TypeError('string required');
 
+  if (addr.length > 15)
+    throw new IPv4ValueError('addr too long');
+
   var octs = addr.split('.');
 
   if (octs.length !== 4)
@@ -30,8 +33,9 @@ function aton(addr) {
         octi.toString() !== oct)
       throw IPv4ValueError(util.format('bad octect %s', oct));
 
-    num += octi << ((4 - 1 - i) * 8);
+    num += octi << ((4 - 1 - i) * 8) >>> 0;
   }
+
   return num;
 };
 
@@ -40,10 +44,12 @@ function ntoa(num) {
   if (typeof num !== 'number' || num !== parseInt(num, 10))
     throw new IPv4TypeError('integer required');
 
+  num = num >>> 0;
+
   var octs = [];
 
   for (var i = 0; i < 4; i++) {
-    var oct = (num >> ((4 - 1 - i) * 8)) & 0xff;
+    var oct = (num >> ((4 - 1 - i) * 8) >>> 0) & 0xff;
     octs.push(oct);
   }
   return octs.join('.');

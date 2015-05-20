@@ -9,6 +9,9 @@
     "dependencies": {
         "create-error.js": "~0.0.2"
     },
+    "devDependencies": {
+        "ntt": ">=0.0.5"
+    },
     "scripts": {
         "test": "node test.js"
     },
